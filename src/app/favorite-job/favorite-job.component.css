@@ -15,6 +15,13 @@
     color:black;
     font-weight: bold;
 }
+.fw-bold a {
+    color: black;
+}
+
+.fw-bold a:hover {
+    color: black;
+}
 .company-color{
 
     color: black;

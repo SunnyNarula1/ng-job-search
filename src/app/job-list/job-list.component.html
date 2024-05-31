@@ -5,14 +5,15 @@
     </div>
     <div class="col-sm-10 title">
         <div class="fw-bold">
-            <a><strong>{{job.title}}</strong></a>
+            <a [routerLink]="['/jobs' ,job.id]"><strong>{{job.title}}</strong></a>
         </div>
         <div class="company-color">
             <span>company:</span> {{job.companyName}}  <span>Reference:</span> {{job.reference}}
         </div> 
     </div>
     <div class="span.icon-star">
-        <span class="icon-star" id="star-{{job.id}}" (click)="selectAndRemoveFavorite(job)" [class.active]="isFavorite(job.id)"></span>
+        <span class="icon-star" id="star-{{job.id}}" (click)="selectAndRemoveFavorite(job)" 
+        [class.active]="isFavorite(job.id)"></span>
     </div>
 </div>
 <div class="notFound text-center" *ngIf="jobs?.length === 0">

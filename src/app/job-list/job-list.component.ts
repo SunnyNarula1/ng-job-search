@@ -3,11 +3,12 @@ import { Job } from '../model/job';
 import { Subscription } from 'rxjs';
 import { JobService } from '../service/job.service';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-job-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule , RouterLink],
   templateUrl: './job-list.component.html',
   styleUrl: './job-list.component.css'
 })

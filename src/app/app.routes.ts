@@ -17,5 +17,9 @@ export const routes: Routes = [
         loadComponent:()=> import('./favorite-job/favorite-job.component').then(m=>m.FavoriteJobComponent)
             
     },
+    {
+        path:"jobs/:id",
+        loadComponent:()=> import('./job-detail/job-detail.component').then(m=>m.JobDetailComponent) 
+    },
     { path: '**', component: JobListComponent }
 ];

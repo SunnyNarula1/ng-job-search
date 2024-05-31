@@ -1,0 +1,31 @@
+<div *ngIf="jobDetils">
+     <div class="container">
+        <span class="back-icon" (click)="backToHome()">
+        <i class="icon">&#8962;</i>
+        <span class="test">Back</span>
+        </span>
+        
+       <div class="row header">
+             <div class="col-sm-1">
+                <img [src]="jobDetils.companyLogo" alt="Logo"/>
+             </div>
+            <div class="col-sm-11 title">
+                <div class="fw-bold">
+                    <h3><strong>{{ jobDetils.companyName }} - {{ jobDetils.title }}</strong></h3>
+                </div>
+                <mark class="tag" *ngFor="let type of jobDetils.types; index as i"
+                [id]="'type-' + i">{{type}}</mark>&nbsp;
+                <mark class="tag" *ngFor="let industries of jobDetils.industries; index as i"
+                [id]="'industries-' + i" [innerHTML]="industries"></mark>
+            </div> 
+       </div>
+       <div class="mt-3">
+        <p><strong>Publish date:</strong> {{ jobDetils.publishDate | date:'MM/dd/yy' }}</p>
+        <p><strong>Location:</strong> {{ jobDetils.location }}</p>
+        <p><strong>Reference:</strong> {{ jobDetils.reference }}</p>
+        <p><strong>Description:</strong></p>
+        <div [innerHTML]="jobDetils.description"></div>
+    </div>
+       
+    </div>
+</div>
