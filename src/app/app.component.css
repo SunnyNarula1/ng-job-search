@@ -1,6 +1,17 @@
 .header {
     text-align: center;
+    color: black;
+
 }
 .container {
     width: 61%;
+}
+.button {
+    margin: 0px;
+}
+.button-group {
+    display: flex;
+    border: none;
+    border-radius: var(--universal-border-radius);
+    margin: var(--universal-margin);
 }

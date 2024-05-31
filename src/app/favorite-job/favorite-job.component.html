@@ -1,5 +1,4 @@
-
-<div class="row list" *ngFor="let job of jobs; let i = index">
+<div class="row list" *ngFor="let job of favoriteJobs; let i = index">
     <div class="company-logo">
             <img [src]="job.companyLogo" alt="Logo" />
     </div>
@@ -9,12 +8,10 @@
         </div>
         <div class="company-color">
             <span>company:</span> {{job.companyName}}  <span>Reference:</span> {{job.reference}}
-        </div> 
-    </div>
-    <div class="span.icon-star">
-        <span class="icon-star" id="star-{{job.id}}" (click)="selectAndRemoveFavorite(job)" [class.active]="isFavorite(job.id)"></span>
+        
     </div>
 </div>
-<div class="notFound text-center" *ngIf="jobs?.length === 0">
+
+<div class="notFound text-center" *ngIf="favoriteJobs?.length === 0">
     <span>Record Not Found</span>
 </div>

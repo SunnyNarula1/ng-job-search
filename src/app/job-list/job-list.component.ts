@@ -15,6 +15,7 @@ export class JobListComponent implements OnInit ,OnDestroy {
 
   jobs: Job[]=[];
 
+  favoriteJobs!: Job[];
   subscription$ :Subscription | undefined;
 
   constructor(private jobService : JobService){
@@ -22,6 +23,7 @@ export class JobListComponent implements OnInit ,OnDestroy {
   }
   ngOnInit() : void{
     this.getAllJobs();
+    this.getFavoriteJobs();
 
   }
 
@@ -36,7 +38,20 @@ export class JobListComponent implements OnInit ,OnDestroy {
       })
     
   }
+// Calling service method for fetch a list of Favorite jobs
+  getFavoriteJobs(){
+    this.favoriteJobs = this.jobService.getAllFavoriteJobList();
+  }
 
+ // The click on the star should be managed in order to add or remove the selected job in a favorite list
+selectAndRemoveFavorite(job:Job){
+this.jobService.selectAndRemoveFavoriteJob(job);
+}
+// we are checking job is in the list of favorite jobs list
+isFavorite(jobId:number) : boolean{
+  return this.favoriteJobs.some(job=> job.id === jobId);
+
+}
   //unsubscribe job service method
   ngOnDestroy() {
     this.subscription$?.unsubscribe();
