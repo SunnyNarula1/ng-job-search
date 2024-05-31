@@ -11,7 +11,7 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
   styleUrl: './favorite-job.component.css'
 })
 export class FavoriteJobComponent implements OnInit {
-favoriteJobs: Job[] =[];
+favoriteJobs: Job[] | undefined;
 
 constructor(private jobService: JobService){
 

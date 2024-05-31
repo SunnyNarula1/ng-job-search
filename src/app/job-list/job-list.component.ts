@@ -48,7 +48,7 @@ selectAndRemoveFavorite(job:Job){
 this.jobService.selectAndRemoveFavoriteJob(job);
 }
 // we are checking job is in the list of favorite jobs list
-isFavorite(jobId:number) : boolean{
+isFavorite(jobId: number) : boolean{
   return this.favoriteJobs.some(job=> job.id === jobId);
 
 }

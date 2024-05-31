@@ -8,10 +8,10 @@
         </div>
         <div class="company-color">
             <span>company:</span> {{job.companyName}}  <span>Reference:</span> {{job.reference}}
+        </div> 
         
     </div>
 </div>
-
-<div class="notFound text-center" *ngIf="favoriteJobs?.length === 0">
-    <span>Record Not Found</span>
+<div class="notFound" *ngIf="favoriteJobs?.length === 0">
+    <span>No Favorite Job Selected.</span>
 </div>
