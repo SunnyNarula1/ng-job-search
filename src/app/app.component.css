@@ -1,17 +1,27 @@
+.container {
+    width: 61%;
+    margin: 0 auto;
+}
 .header {
     text-align: center;
     color: black;
 
 }
-.container {
-    width: 61%;
-}
-.button {
-    margin: 0px;
-}
 .button-group {
     display: flex;
-    border: none;
-    border-radius: var(--universal-border-radius);
+    justify-content: center;
     margin: var(--universal-margin);
+}
+.button {
+    background-color: #f0f0f0; /* Default background color */
+    color: black; /* Default text color */
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s, color 0.3s;
+}
+.button.active {
+    background-color: black; /* Active background color */
+    color: white; /* Active text color */
 }

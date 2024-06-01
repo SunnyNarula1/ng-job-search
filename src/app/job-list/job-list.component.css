@@ -7,7 +7,6 @@
 .company-logo img {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
     margin-right: 20px;
   }
 .fw-bold {
@@ -42,4 +41,9 @@
 .job-details {
     flex-grow: 1;
     color: black;
-  }
+}
+.notFound {
+    padding-top: 150px;
+    text-align: center;
+    color: black;
+}

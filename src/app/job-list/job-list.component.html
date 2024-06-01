@@ -5,7 +5,7 @@
     </div>
     <div class="col-sm-10 title">
         <div class="fw-bold">
-            <a [routerLink]="['/jobs' ,job.id]"><strong>{{job.title}}</strong></a>
+            <a [routerLink]="['/jobs',job.id]"><strong>{{job.title}}</strong></a>
         </div>
         <div class="company-color">
             <span>company:</span> {{job.companyName}}  <span>Reference:</span> {{job.reference}}
@@ -16,6 +16,6 @@
         [class.active]="isFavorite(job.id)"></span>
     </div>
 </div>
-<div class="notFound text-center" *ngIf="jobs?.length === 0">
-    <span>Record Not Found</span>
+<div class="notFound" *ngIf="jobs?.length === 0">
+    <span>Jobs Not Found</span>
 </div>
