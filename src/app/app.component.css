@@ -13,7 +13,7 @@
     margin: var(--universal-margin);
 }
 .button {
-    background-color: #f0f0f0; /* Default background color */
+    background-color:#e3e1e1; /* Default background color */
     color: black; /* Default text color */
     text-decoration: none;
     padding: 10px 20px;

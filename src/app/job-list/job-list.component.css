@@ -8,6 +8,7 @@
     width: 50px;
     height: 50px;
     margin-right: 20px;
+    margin-left: 10px;
   }
 .fw-bold {
     font-size: 22px;
@@ -33,6 +34,7 @@
     height: 24px;
     color: black;
     cursor: pointer;
+    margin-left: 40px;
   }
 .icon-star.active{
     color: gold;
