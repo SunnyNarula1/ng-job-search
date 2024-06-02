@@ -11,6 +11,7 @@ export class JobService {
   private api_url = '/jobs';
 
   private favoriteJobs : Job[] =[];
+  private favoritesKey: string = 'favorites';
 
   constructor(private http: HttpClient) { }
 
@@ -24,19 +25,32 @@ export class JobService {
   getAllFavoriteJobList(): Job[] {
     return this.favoriteJobs;
   }
+
+  // Get favorite jobs from local storage
+  getFavorites(): Job[] {
+    const favorites: string | null = localStorage.getItem(this.favoritesKey);
+    return favorites ? JSON.parse(favorites) : [];
+  }
+  
   // select and remove a job from the list of favorite Jobs
   selectAndRemoveFavoriteJob(job: Job){
-  const index = this.favoriteJobs.findIndex(favoriteJobs => favoriteJobs.id === job.id);
+  const favorites = this.getFavorites();
+  const index = favorites.findIndex(favorites => favorites.id === job.id);
   if(index === -1){
-    this.favoriteJobs.push(job);
+    favorites.push(job);
   }else{
-    this.favoriteJobs.splice(index , 1);
+    favorites.splice(index , 1);
   }
+  localStorage.setItem(this.favoritesKey, JSON.stringify(favorites))
   }
   // get the job details by job id
   getJobDetailsById(id:number): Observable<JobDetails>{
     return this.http.get<JobDetails>(`${this.api_url}/${id}`)
     .pipe(catchError((error)=> this.errorHandler(error)));
+  }
+  isFavorited(jobId :number): boolean{
+    return this.getFavorites().some(favorite=>favorite.id ===jobId);
+
   }
 
   errorHandler(error: Error) {

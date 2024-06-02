@@ -23,7 +23,11 @@ ngOnInit(){
 
 // Calling service method for fetch a list of  Favorite jobs
 getAllFavoriteJobs(){
-  this.favoriteJobs = this.jobService.getAllFavoriteJobList();
+  this.favoriteJobs = this.jobService.getFavorites();
 
 }
+
+
+
+
 }
